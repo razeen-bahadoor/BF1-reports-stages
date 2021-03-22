@@ -1,0 +1,260 @@
+Summary: In this step we gain experience in representing vaious apis as grammar
+
+
+EBNF rules:
+definition 	=
+concatenation 	,
+termination 	;
+alternation 	|
+optional 	[ ... ]
+repetition 	{ ... }
+grouping 	( ... )
+terminal string 	" ... "
+terminal string 	' ... '
+comment 	(* ... *)
+special sequence 	? ... ?
+exception 	-
+
+
+Mapping non existent types:
+Two methods for example
+int ::= -1|0|1 (test the boundaries)
+int::= digit+
+digit::= 0|1|2|3|4|5|6|7|8|9
+
+
+
+Class: StringWriter
+G = (V,Sigma,R,S)
+v={StringWriter, void, StringBuffer, String} (Types)
+Sigma = {StringWriter, append, close, flush, getBuffer, toString, write}
+
+R:
+
+
+StringWriter ::= 'new','StringWriter','(',[int],')' | StringWriter,'.','append','(', (char | charsequence | (charsequence,',',int,',',int)),')';
+
+
+Void ::= StringWriter,'.', (('close'|'flush'),'(',')' | 'write','(',(int | String,[',',int,',',int] | chararray,',',int,',',int) ,')');
+
+
+StringBuffer ::=  StringWriter,'.','getBuffer','(',')';
+String ::= StringWriter,'.','toString','(',')';
+
+int::= ['-'],{digit};
+digit::= 0|1|2|3|4|5|6|7|8|9;
+char::= a|b|c|D|e|f|g|h|i|j|k|l|m|n.......;
+chararray::= 'new','char','[',']','{',{',',char},'}';
+charsequence::= String;
+
+
+
+###########################################################################
+
+Class:TrieSet
+G = (V,Sigma,R,S)
+V = {TriSet,Void, boolean, Iterator<String>, String,  int}
+Sigma = {add, contains, delete, isEmpty, iterator<String>,Iterable<String>, keysThatMatch, KeyswithPrefix, longestPrefixOf, size}
+
+
+R:
+
+TrieSET ::= 'new','TrieSET','(',')';
+ Void ::= TrieSET,'.',('add'|'delete'),'(',String,')';
+ 
+ boolean ::= Triset,'.',('contains','(',String,')' | 'isEmpty','(',')');
+ 
+ Iterator<String> ::= Triset,'.','iterator','(',')';
+ Iterable<String> ::= Triset,'.',('keysThatMatch'|'KeysWithPrefix'),'(',String,')';
+ 
+String ::= null | "" | hello|tom| TrieSet,'.','longestPrefixOf','(',String,')';
+
+int ::= TriSET,'.','size','(',')';
+##############################################################################################
+
+Class:Strman
+G = (V,Sigma,R,S)
+V = {String,Optional<T>, String[], Map<char, long>, boolean, long, int, }
+Sigma = {append, appendArray,at, base64Decode, base64Encode, between, bindDecode, bingEncode, capitalize, chars, charsCount, collapseWhiteSpace, contains, containsAll, containsAny, countSubstr, decDecode, decEncode, encode, decode, endswith, ensureLeft, ensureRight, first,first, format, head, hexDecode, hexEncode, htmlDecode, htmlEncode, indexOf, inequal, insert, isEncloseBetween, isLowerCase, isString, isUpperCase, join, last, lastInfexOf, keftPad, leftTrim, length, lowerFirst, prepend, prependArray, removeEmptyStrings, removeLeft, removeNonWords, removeRight, removeSpaces, replace, reverse, rightPad, safeTruncate, shuffle, slice, slugify, split, surround, tail, toCamelCase, toDecamelize, toKebabCase, toSnakeCase,tostudylCase, transliterate, trimEnd, trimStart, truncate, unequal, upperFirst, words}
+
+
+String ::= 'Strman','.',(
+
+	
+	|'append','(',String,{',',String},')'
+	|'appendArray','(',String,','String[],')'
+	|'collapseWhiteSpace','(',String,')'
+	|'ensureLeft','(',String,',',String[,',',Boolean],')'
+	|'base64Decode','(',String,')'
+	|'base64Encode','(',String,')'
+	|'binDecode','(',String,')'
+	|'binEncode','(',String,')'
+	|'decDecode','(',String,')'
+	|'decEncode','(',String,')'
+	|'ensureRight','(',String,',',String[,',',Boolean],')'
+	|'format','(',String,{',',String},')'
+	|'hexDecode','(',String,')'
+	|'hexEncode','(',String,')'
+	|'insert','(',String,',',String,',',int,')'
+	|'last','(',String,',',int,')'
+	|'leftPad','(',String,',',String,',',int,')'
+	|'leftTrim','(',String,')'
+	|'prepend','(',String,{',',String},')'
+	|'prependArray','(',String,','String[],')'
+	|'removeLeft','(',String,',',String[,',',Boolean],')'
+	|'removeNonWords','(',String,')'
+	|'removeRight','(',String,',',String[,',',Boolean],')'
+	|'removeSpaces','(',String,')'	
+	|'repeat','(',String,',',int,')'
+	|'replace','(',String,',',String,',',String,',',Boolean,')'
+	|'reverse','(',String,')'	
+	|'rightPad','(',String,',',String,',',int,')'
+	|'rightTrim','(',String,')'
+	|'safeTruncate','(',String,',',int,',',String,')'	
+	|'truncate','(',String,',',int,',',String,')'
+	|'htmlDecode','(',String,')'
+	|'htmlEncode','(',String,')'
+	|'shuffle','(',String,')'
+	|'slice','(',String,',',int,',',int,')'
+	|'slugify','(',String,')'
+	|'transliterate','(',String,')'
+	|'surround','(',String,',',String,',',String,')'
+	|'toCamelCase','(',String,')'
+	|'toStudlyCase','(',String,')'
+	|'toDecamelize','(',String,')'
+	|'toKebabCase','(',String,')'
+	|'toSnakeCase','(',String,')'
+	
+	
+	|'decode','(',String,',',int,',',int,')'
+	|'encode','(',String,',',int,',',int,')'
+	|'join','(',String[],',',String,')'
+	|'lowerFirst','(',String,')'
+
+	|'upperFirst','(',String,')'	
+	|'capitelize','(',String,')'
+	|'swapCase','(', String,')'
+	|'humanize','(',String,')'
+	|'dasherize','(',String,')'
+	
+	);
+	 
+String[] ::= 'Strman','.',(
+
+	'between','(',String,',',String,',',String,')'
+	|'chars','(',String,')'
+	|'removeEmptyStrings','('String[],')'
+	|'split','(',String,',',String,')'
+	|'words','(',String,')'
+	|'chop','(', String, ',',int,')' 
+	|'lines','(',String,')'
+	|'underscored','(',String,')'
+	
+);
+List<String>::= 'Strman','.','zip','(',String[],')'
+Map<Character,Long> :: 'Strman','.''charsCount','(',String,')';
+boolean::= 'Strman','.',(
+
+	'contains','(',String,',',String[,',',Boolean],')'
+	|'containsAll','(',String,',',String[][,',',Boolean],')'
+	|'containsAny','(',String,',',String[][,',',Boolean],')'
+	|'endsWith','(',String,',',String[,',',int][,',',Boolean],')'
+	|'inequal','(',String,',',String,')'
+	|'isEnclosedBetween','(',String,',',String[,',',String],')'
+	|'isLowerCase','(',String,')'
+	|'isString','(',String,')'
+	|'isUpperCase','(',String,')'
+	|'unequal','(',String,',',String,')'
+	|'isBlank','(',String,')'
+);
+
+long ::= 'Strman','.',(
+	'countSubstr','(',String,',',String[,',',boolean,',',boolean],')'
+	|
+);
+
+int::= 'Strman','.',(
+	'indexOf','('String,',',String,',',int,',',boolean,')'
+	|'lastIndexOf','(',String,',',String[,',',int][,',',Boolean],')'
+	|'length','(',String,')'
+);
+
+
+Optional<String>::= 'Strman','.',(
+	'at','(',String,',',int,')'
+	|'first','(',String,',',int,')'
+	|'head','(',String,')'
+	|'tail','(',String,')'
+	|'trimEnd','(',String,{String},')'
+	|'trimStart','(',String,{String},')'
+
+);
+#############################################################################################################
+Class: ServerSocket
+G = (V,Sigma,R,S)
+V = {ServerSocket, Socket, Void, ServerSocketChannel, InetAddress, int, boolean, protected void,static void,String}
+
+Sigma= {ServerSocket, accept, bind, close, getChannel, getInetAddress, getLocalPort, getLocalSocketAddress, getReceiveBufferSize, getReuseAddress, getSoTimeout, implAccept, isBound, isClosed, setPerformancePreferences, setReceiveBufferSize,setReuseAddress, setSocketFactory,setSoTimeout, toString}
+
+
+R:
+ServerSocket ::= 'new','ServerSocket','('[int | int,',',int , [',',InetAddress]],')';
+
+Socket ::= ServerSocket,'.','accept','(',')';
+ServerSocketChannel ::= ServerSocket,'.','getChannel','(',')';
+InetAddress ::= ServerSocket,'.','getInetAddress','(',')';
+int ::= ServerSocket,'.',('getLocalPort' | 'getReceiveBufferSize' | 'getSoTimeout'),'(',')';
+
+SocketAddress ::= ServerSocket,'.','getLocalSocketAddress','(',')';
+boolean ::= ServerSocket,'.',('getReuseAddress' | 'isBound' | 'isClosed'),'(',')';
+
+Protected void ::= ServerSocket,'.','implAccept','(',Socket,')';
+static void ::= ServerSocket,'.','setSocketFactory','(',SocketImplFactory,')';
+
+String ::= ServerSocket,'.','toString','(',')';
+void ::= ServerSocket,'.',('bind','('SocketAddress, [',',int],')' | 'close','(',')' | 'setPerformancePreferences','(', int,',',int,',',int,')' | ('setRecieveBufferSize' | setSoTimeout),'(',int,')' | 'setReuseAddress','(',boolean,')');
+
+
+
+####################################################################################################################
+
+
+class: StringBuilder
+G = (V,Sigma,R,S)
+V = {StringBuilder, int, char, IntStream, void, String}
+Sigma={StringBuilder appendm appendCodePoint, capacity, chatAt, chars, codePointAtm codePointBefore, codePointCount, codePoints, compareTo, delete, deleteCharAt, ensureCapacity, getChars, indexOfm insert, lastIndexOfm lengthm offsetByCodePoints, replace, reverse, setCharAt, setLength, subSequence, substring, trimToSize}
+
+
+R:
+
+StringBuilder ::= 'new','StringBuilder','(',[int|CharSequence|String],')' |
+	
+		StringBuilder,'.','append','(',(boolean|char|chararray,[',',int,',',int]|double|float|int|long|charsequence,[',',int,',',int]|Object|String|StringBuffer ),')' 										  |
+		
+		StringBuilder,'.','appendCodePoint','(',int,')' 				  |
+		
+		StringBuilder,'.','delete','(',int,int,')' 					      |
+		
+		StringBuilder,'.','deleteCharAt','(',int,')' 					  |
+		
+		StringBuilder.'.','insert','('int,(boolean|char|chararray,[','int,',',int]|double|float|int|long|charsequence,[',',int,',',int] | Object|String),')'														  |
+		StringBuilder,'.','replace','(',int,',',int,',',String,')'	      |
+		
+		
+		StringBuilder.'.','reverse','('')';
+		
+		
+int ::= StringBuilder,'.',('capacity','(',')' | ('codePointAt'|'codePointBefore'),'(',int,')' | 'codePointCount','(',int,int,')'| 'compareTo','('StringBuilder,')'| 'indexOf','(',String,[','int],')' |'lastIndexOf','(',String,[','.int],')' | 'length','(',')'| 'offsetByCodePoints','('int,',',int,')');
+
+char ::= StringBuilder,'.','charAt','(',int,')';
+IntStream ::=  StringBuilder,'.',('chars'|'codePoints'),'(',')';
+void ::=  StringBuilder,'.',(('ensureCapacity'|setLength),'(',int')' | 'getChars','(',int,',',int,',',chararray,',',int,')' | 'setCharAt','('int,',',char,')'|'trimToSize','(',')');
+
+
+CharSequence ::=  StringBuilder,'.','subSequence','(',int,',',int,')';
+String::=  StringBuilder,'.','substring','(',int,[',',int],')';
+
+
+
+
+

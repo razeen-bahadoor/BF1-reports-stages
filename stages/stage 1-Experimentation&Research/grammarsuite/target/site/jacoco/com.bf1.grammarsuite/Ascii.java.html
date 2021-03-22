@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Ascii.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">grammarsuite</a> &gt; <a href="index.source.html" class="el_package">com.bf1.grammarsuite</a> &gt; <span class="el_source">Ascii.java</span></div><h1>Ascii.java</h1><pre class="source lang-java linenums">package com.bf1.grammarsuite;
+/*
+ *
+ *  * The MIT License
+ *  *
+ *  * Copyright 2016 Shekhar Gulati &lt;shekhargulati84@gmail.com&gt;.
+ *  *
+ *  * Permission is hereby granted, free of charge, to any person obtaining a copy
+ *  * of this software and associated documentation files (the &quot;Software&quot;), to deal
+ *  * in the Software without restriction, including without limitation the rights
+ *  * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ *  * copies of the Software, and to permit persons to whom the Software is
+ *  * furnished to do so, subject to the following conditions:
+ *  *
+ *  * The above copyright notice and this permission notice shall be included in
+ *  * all copies or substantial portions of the Software.
+ *  *
+ *  * THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ *  * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ *  * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ *  * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ *  * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ *  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+ *  * THE SOFTWARE.
+ *
+ */
+
+
+
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+<span class="nc" id="L35">abstract class Ascii {</span>
+<span class="nc" id="L36">    public static final Map&lt;String, List&lt;String&gt;&gt; ascii = new HashMap&lt;String, List&lt;String&gt;&gt;() {{</span>
+
+<span class="nc" id="L38">        put(&quot;0&quot;, Arrays.asList(&quot;°&quot;, &quot;₀&quot;, &quot;۰&quot;));</span>
+<span class="nc" id="L39">        put(&quot;1&quot;, Arrays.asList(&quot;¹&quot;, &quot;₁&quot;, &quot;۱&quot;));</span>
+<span class="nc" id="L40">        put(&quot;2&quot;, Arrays.asList(&quot;²&quot;, &quot;₂&quot;, &quot;۲&quot;));</span>
+<span class="nc" id="L41">        put(&quot;3&quot;, Arrays.asList(&quot;³&quot;, &quot;₃&quot;, &quot;۳&quot;));</span>
+<span class="nc" id="L42">        put(&quot;4&quot;, Arrays.asList(&quot;⁴&quot;, &quot;₄&quot;, &quot;۴&quot;, &quot;٤&quot;));</span>
+<span class="nc" id="L43">        put(&quot;5&quot;, Arrays.asList(&quot;⁵&quot;, &quot;₅&quot;, &quot;۵&quot;, &quot;٥&quot;));</span>
+<span class="nc" id="L44">        put(&quot;6&quot;, Arrays.asList(&quot;⁶&quot;, &quot;₆&quot;, &quot;۶&quot;, &quot;٦&quot;));</span>
+<span class="nc" id="L45">        put(&quot;7&quot;, Arrays.asList(&quot;⁷&quot;, &quot;₇&quot;, &quot;۷&quot;));</span>
+<span class="nc" id="L46">        put(&quot;8&quot;, Arrays.asList(&quot;⁸&quot;, &quot;₈&quot;, &quot;۸&quot;));</span>
+<span class="nc" id="L47">        put(&quot;9&quot;, Arrays.asList(&quot;⁹&quot;, &quot;₉&quot;, &quot;۹&quot;));</span>
+<span class="nc" id="L48">        put(&quot;a&quot;, Arrays.asList(&quot;à&quot;, &quot;á&quot;, &quot;ả&quot;, &quot;ã&quot;, &quot;ạ&quot;, &quot;ă&quot;, &quot;ắ&quot;, &quot;ằ&quot;, &quot;ẳ&quot;, &quot;ẵ&quot;, &quot;ặ&quot;, &quot;â&quot;, &quot;ấ&quot;, &quot;ầ&quot;, &quot;ẩ&quot;, &quot;ẫ&quot;, &quot;ậ&quot;,</span>
+                &quot;ā&quot;, &quot;ą&quot;, &quot;å&quot;, &quot;α&quot;, &quot;ά&quot;, &quot;ἀ&quot;, &quot;ἁ&quot;, &quot;ἂ&quot;, &quot;ἃ&quot;, &quot;ἄ&quot;, &quot;ἅ&quot;, &quot;ἆ&quot;, &quot;ἇ&quot;, &quot;ᾀ&quot;, &quot;ᾁ&quot;, &quot;ᾂ&quot;, &quot;ᾃ&quot;,
+                &quot;ᾄ&quot;, &quot;ᾅ&quot;, &quot;ᾆ&quot;, &quot;ᾇ&quot;, &quot;ὰ&quot;, &quot;ά&quot;, &quot;ᾰ&quot;, &quot;ᾱ&quot;, &quot;ᾲ&quot;, &quot;ᾳ&quot;, &quot;ᾴ&quot;, &quot;ᾶ&quot;, &quot;ᾷ&quot;, &quot;а&quot;, &quot;أ&quot;, &quot;အ&quot;, &quot;ာ&quot;,
+                &quot;ါ&quot;, &quot;ǻ&quot;, &quot;ǎ&quot;, &quot;ª&quot;, &quot;ა&quot;, &quot;अ&quot;, &quot;ا&quot;));
+<span class="nc" id="L52">        put(&quot;b&quot;, Arrays.asList(&quot;б&quot;, &quot;β&quot;, &quot;Ъ&quot;, &quot;Ь&quot;, &quot;ب&quot;, &quot;ဗ&quot;, &quot;ბ&quot;));</span>
+<span class="nc" id="L53">        put(&quot;c&quot;, Arrays.asList(&quot;ç&quot;, &quot;ć&quot;, &quot;č&quot;, &quot;ĉ&quot;, &quot;ċ&quot;));</span>
+<span class="nc" id="L54">        put(&quot;d&quot;, Arrays.asList(&quot;ď&quot;, &quot;ð&quot;, &quot;đ&quot;, &quot;ƌ&quot;, &quot;ȡ&quot;, &quot;ɖ&quot;, &quot;ɗ&quot;, &quot;ᵭ&quot;, &quot;ᶁ&quot;, &quot;ᶑ&quot;, &quot;д&quot;, &quot;δ&quot;, &quot;د&quot;, &quot;ض&quot;, &quot;ဍ&quot;, &quot;ဒ&quot;, &quot;დ&quot;));</span>
+<span class="nc" id="L55">        put(&quot;e&quot;, Arrays.asList(&quot;é&quot;, &quot;è&quot;, &quot;ẻ&quot;, &quot;ẽ&quot;, &quot;ẹ&quot;, &quot;ê&quot;, &quot;ế&quot;, &quot;ề&quot;, &quot;ể&quot;, &quot;ễ&quot;, &quot;ệ&quot;, &quot;ë&quot;, &quot;ē&quot;, &quot;ę&quot;, &quot;ě&quot;, &quot;ĕ&quot;, &quot;ė&quot;,</span>
+                &quot;ε&quot;, &quot;έ&quot;, &quot;ἐ&quot;, &quot;ἑ&quot;, &quot;ἒ&quot;, &quot;ἓ&quot;, &quot;ἔ&quot;, &quot;ἕ&quot;, &quot;ὲ&quot;, &quot;έ&quot;, &quot;е&quot;, &quot;ё&quot;, &quot;э&quot;, &quot;є&quot;, &quot;ə&quot;, &quot;ဧ&quot;, &quot;ေ&quot;,
+                &quot;ဲ&quot;, &quot;ე&quot;, &quot;ए&quot;, &quot;إ&quot;, &quot;ئ&quot;));
+<span class="nc" id="L58">        put(&quot;f&quot;, Arrays.asList(&quot;ф&quot;, &quot;φ&quot;, &quot;ف&quot;, &quot;ƒ&quot;, &quot;ფ&quot;));</span>
+<span class="nc" id="L59">        put(&quot;g&quot;, Arrays.asList(&quot;ĝ&quot;, &quot;ğ&quot;, &quot;ġ&quot;, &quot;ģ&quot;, &quot;г&quot;, &quot;ґ&quot;, &quot;γ&quot;, &quot;ဂ&quot;, &quot;გ&quot;, &quot;گ&quot;));</span>
+<span class="nc" id="L60">        put(&quot;h&quot;, Arrays.asList(&quot;ĥ&quot;, &quot;ħ&quot;, &quot;η&quot;, &quot;ή&quot;, &quot;ح&quot;, &quot;ه&quot;, &quot;ဟ&quot;, &quot;ှ&quot;, &quot;ჰ&quot;));</span>
+<span class="nc" id="L61">        put(&quot;i&quot;, Arrays.asList(&quot;í&quot;, &quot;ì&quot;, &quot;ỉ&quot;, &quot;ĩ&quot;, &quot;ị&quot;, &quot;î&quot;, &quot;ï&quot;, &quot;ī&quot;, &quot;ĭ&quot;, &quot;į&quot;, &quot;ı&quot;, &quot;ι&quot;, &quot;ί&quot;, &quot;ϊ&quot;, &quot;ΐ&quot;, &quot;ἰ&quot;, &quot;ἱ&quot;,</span>
+                &quot;ἲ&quot;, &quot;ἳ&quot;, &quot;ἴ&quot;, &quot;ἵ&quot;, &quot;ἶ&quot;, &quot;ἷ&quot;, &quot;ὶ&quot;, &quot;ί&quot;, &quot;ῐ&quot;, &quot;ῑ&quot;, &quot;ῒ&quot;, &quot;ΐ&quot;, &quot;ῖ&quot;, &quot;ῗ&quot;, &quot;і&quot;, &quot;ї&quot;, &quot;и&quot;,
+                &quot;ဣ&quot;, &quot;ိ&quot;, &quot;ီ&quot;, &quot;ည်&quot;, &quot;ǐ&quot;, &quot;ი&quot;, &quot;इ&quot;, &quot;ی&quot;));
+<span class="nc" id="L64">        put(&quot;j&quot;, Arrays.asList(&quot;ĵ&quot;, &quot;ј&quot;, &quot;Ј&quot;, &quot;ჯ&quot;, &quot;ج&quot;));</span>
+<span class="nc" id="L65">        put(&quot;k&quot;, Arrays.asList(&quot;ķ&quot;, &quot;ĸ&quot;, &quot;к&quot;, &quot;κ&quot;, &quot;Ķ&quot;, &quot;ق&quot;, &quot;ك&quot;, &quot;က&quot;, &quot;კ&quot;, &quot;ქ&quot;, &quot;ک&quot;));</span>
+<span class="nc" id="L66">        put(&quot;l&quot;, Arrays.asList(&quot;ł&quot;, &quot;ľ&quot;, &quot;ĺ&quot;, &quot;ļ&quot;, &quot;ŀ&quot;, &quot;л&quot;, &quot;λ&quot;, &quot;ل&quot;, &quot;လ&quot;, &quot;ლ&quot;));</span>
+<span class="nc" id="L67">        put(&quot;m&quot;, Arrays.asList(&quot;м&quot;, &quot;μ&quot;, &quot;م&quot;, &quot;မ&quot;, &quot;მ&quot;));</span>
+<span class="nc" id="L68">        put(&quot;n&quot;, Arrays.asList(&quot;ñ&quot;, &quot;ń&quot;, &quot;ň&quot;, &quot;ņ&quot;, &quot;ŉ&quot;, &quot;ŋ&quot;, &quot;ν&quot;, &quot;н&quot;, &quot;ن&quot;, &quot;န&quot;, &quot;ნ&quot;));</span>
+<span class="nc" id="L69">        put(&quot;o&quot;, Arrays.asList(&quot;ó&quot;, &quot;ò&quot;, &quot;ỏ&quot;, &quot;õ&quot;, &quot;ọ&quot;, &quot;ô&quot;, &quot;ố&quot;, &quot;ồ&quot;, &quot;ổ&quot;, &quot;ỗ&quot;, &quot;ộ&quot;, &quot;ơ&quot;, &quot;ớ&quot;, &quot;ờ&quot;, &quot;ở&quot;, &quot;ỡ&quot;, &quot;ợ&quot;,</span>
+                &quot;ø&quot;, &quot;ō&quot;, &quot;ő&quot;, &quot;ŏ&quot;, &quot;ο&quot;, &quot;ὀ&quot;, &quot;ὁ&quot;, &quot;ὂ&quot;, &quot;ὃ&quot;, &quot;ὄ&quot;, &quot;ὅ&quot;, &quot;ὸ&quot;, &quot;ό&quot;, &quot;о&quot;, &quot;و&quot;, &quot;θ&quot;, &quot;ို&quot;,
+                &quot;ǒ&quot;, &quot;ǿ&quot;, &quot;º&quot;, &quot;ო&quot;, &quot;ओ&quot;));
+<span class="nc" id="L72">        put(&quot;p&quot;, Arrays.asList(&quot;п&quot;, &quot;π&quot;, &quot;ပ&quot;, &quot;პ&quot;, &quot;پ&quot;));</span>
+<span class="nc" id="L73">        put(&quot;q&quot;, Arrays.asList(&quot;ყ&quot;));</span>
+<span class="nc" id="L74">        put(&quot;r&quot;, Arrays.asList(&quot;ŕ&quot;, &quot;ř&quot;, &quot;ŗ&quot;, &quot;р&quot;, &quot;ρ&quot;, &quot;ر&quot;, &quot;რ&quot;));</span>
+<span class="nc" id="L75">        put(&quot;s&quot;, Arrays.asList(&quot;ś&quot;, &quot;š&quot;, &quot;ş&quot;, &quot;с&quot;, &quot;σ&quot;, &quot;ș&quot;, &quot;ς&quot;, &quot;س&quot;, &quot;ص&quot;, &quot;စ&quot;, &quot;ſ&quot;, &quot;ს&quot;));</span>
+<span class="nc" id="L76">        put(&quot;t&quot;, Arrays.asList(&quot;ť&quot;, &quot;ţ&quot;, &quot;т&quot;, &quot;τ&quot;, &quot;ț&quot;, &quot;ت&quot;, &quot;ط&quot;, &quot;ဋ&quot;, &quot;တ&quot;, &quot;ŧ&quot;, &quot;თ&quot;, &quot;ტ&quot;));</span>
+<span class="nc" id="L77">        put(&quot;u&quot;, Arrays.asList(&quot;ú&quot;, &quot;ù&quot;, &quot;ủ&quot;, &quot;ũ&quot;, &quot;ụ&quot;, &quot;ư&quot;, &quot;ứ&quot;, &quot;ừ&quot;, &quot;ử&quot;, &quot;ữ&quot;, &quot;ự&quot;, &quot;û&quot;, &quot;ū&quot;, &quot;ů&quot;, &quot;ű&quot;, &quot;ŭ&quot;, &quot;ų&quot;,</span>
+                &quot;µ&quot;, &quot;у&quot;, &quot;ဉ&quot;, &quot;ု&quot;, &quot;ူ&quot;, &quot;ǔ&quot;, &quot;ǖ&quot;, &quot;ǘ&quot;, &quot;ǚ&quot;, &quot;ǜ&quot;, &quot;უ&quot;, &quot;उ&quot;));
+<span class="nc" id="L79">        put(&quot;v&quot;, Arrays.asList(&quot;в&quot;, &quot;ვ&quot;, &quot;ϐ&quot;));</span>
+<span class="nc" id="L80">        put(&quot;w&quot;, Arrays.asList(&quot;ŵ&quot;, &quot;ω&quot;, &quot;ώ&quot;, &quot;ဝ&quot;, &quot;ွ&quot;));</span>
+<span class="nc" id="L81">        put(&quot;x&quot;, Arrays.asList(&quot;χ&quot;, &quot;ξ&quot;));</span>
+<span class="nc" id="L82">        put(&quot;y&quot;, Arrays.asList(&quot;ý&quot;, &quot;ỳ&quot;, &quot;ỷ&quot;, &quot;ỹ&quot;, &quot;ỵ&quot;, &quot;ÿ&quot;, &quot;ŷ&quot;, &quot;й&quot;, &quot;ы&quot;, &quot;υ&quot;, &quot;ϋ&quot;, &quot;ύ&quot;, &quot;ΰ&quot;, &quot;ي&quot;, &quot;ယ&quot;));</span>
+<span class="nc" id="L83">        put(&quot;z&quot;, Arrays.asList(&quot;ź&quot;, &quot;ž&quot;, &quot;ż&quot;, &quot;з&quot;, &quot;ζ&quot;, &quot;ز&quot;, &quot;ဇ&quot;, &quot;ზ&quot;));</span>
+<span class="nc" id="L84">        put(&quot;aa&quot;, Arrays.asList(&quot;ع&quot;, &quot;आ&quot;, &quot;آ&quot;));</span>
+<span class="nc" id="L85">        put(&quot;ae&quot;, Arrays.asList(&quot;ä&quot;, &quot;æ&quot;, &quot;ǽ&quot;));</span>
+<span class="nc" id="L86">        put(&quot;ai&quot;, Arrays.asList(&quot;ऐ&quot;));</span>
+<span class="nc" id="L87">        put(&quot;at&quot;, Arrays.asList(&quot;@&quot;));</span>
+<span class="nc" id="L88">        put(&quot;ch&quot;, Arrays.asList(&quot;ч&quot;, &quot;ჩ&quot;, &quot;ჭ&quot;, &quot;چ&quot;));</span>
+<span class="nc" id="L89">        put(&quot;dj&quot;, Arrays.asList(&quot;ђ&quot;, &quot;đ&quot;));</span>
+<span class="nc" id="L90">        put(&quot;dz&quot;, Arrays.asList(&quot;џ&quot;, &quot;ძ&quot;));</span>
+<span class="nc" id="L91">        put(&quot;ei&quot;, Arrays.asList(&quot;ऍ&quot;));</span>
+<span class="nc" id="L92">        put(&quot;gh&quot;, Arrays.asList(&quot;غ&quot;, &quot;ღ&quot;));</span>
+<span class="nc" id="L93">        put(&quot;ii&quot;, Arrays.asList(&quot;ई&quot;));</span>
+<span class="nc" id="L94">        put(&quot;ij&quot;, Arrays.asList(&quot;ĳ&quot;));</span>
+<span class="nc" id="L95">        put(&quot;kh&quot;, Arrays.asList(&quot;х&quot;, &quot;خ&quot;, &quot;ხ&quot;));</span>
+<span class="nc" id="L96">        put(&quot;lj&quot;, Arrays.asList(&quot;љ&quot;));</span>
+<span class="nc" id="L97">        put(&quot;nj&quot;, Arrays.asList(&quot;њ&quot;));</span>
+<span class="nc" id="L98">        put(&quot;oe&quot;, Arrays.asList(&quot;ö&quot;, &quot;œ&quot;, &quot;ؤ&quot;));</span>
+<span class="nc" id="L99">        put(&quot;oi&quot;, Arrays.asList(&quot;ऑ&quot;));</span>
+<span class="nc" id="L100">        put(&quot;oii&quot;, Arrays.asList(&quot;ऒ&quot;));</span>
+<span class="nc" id="L101">        put(&quot;ps&quot;, Arrays.asList(&quot;ψ&quot;));</span>
+<span class="nc" id="L102">        put(&quot;sh&quot;, Arrays.asList(&quot;ш&quot;, &quot;შ&quot;, &quot;ش&quot;));</span>
+<span class="nc" id="L103">        put(&quot;shch&quot;, Arrays.asList(&quot;щ&quot;));</span>
+<span class="nc" id="L104">        put(&quot;ss&quot;, Arrays.asList(&quot;ß&quot;));</span>
+<span class="nc" id="L105">        put(&quot;sx&quot;, Arrays.asList(&quot;ŝ&quot;));</span>
+<span class="nc" id="L106">        put(&quot;th&quot;, Arrays.asList(&quot;þ&quot;, &quot;ϑ&quot;, &quot;ث&quot;, &quot;ذ&quot;, &quot;ظ&quot;));</span>
+<span class="nc" id="L107">        put(&quot;ts&quot;, Arrays.asList(&quot;ц&quot;, &quot;ც&quot;, &quot;წ&quot;));</span>
+<span class="nc" id="L108">        put(&quot;ue&quot;, Arrays.asList(&quot;ü&quot;));</span>
+<span class="nc" id="L109">        put(&quot;uu&quot;, Arrays.asList(&quot;ऊ&quot;));</span>
+<span class="nc" id="L110">        put(&quot;ya&quot;, Arrays.asList(&quot;я&quot;));</span>
+<span class="nc" id="L111">        put(&quot;yu&quot;, Arrays.asList(&quot;ю&quot;));</span>
+<span class="nc" id="L112">        put(&quot;zh&quot;, Arrays.asList(&quot;ж&quot;, &quot;ჟ&quot;, &quot;ژ&quot;));</span>
+<span class="nc" id="L113">        put(&quot;(c)&quot;, Arrays.asList(&quot;©&quot;));</span>
+<span class="nc" id="L114">        put(&quot;A&quot;, Arrays.asList(&quot;Á&quot;, &quot;À&quot;, &quot;Ả&quot;, &quot;Ã&quot;, &quot;Ạ&quot;, &quot;Ă&quot;, &quot;Ắ&quot;, &quot;Ằ&quot;, &quot;Ẳ&quot;, &quot;Ẵ&quot;, &quot;Ặ&quot;, &quot;Â&quot;, &quot;Ấ&quot;, &quot;Ầ&quot;, &quot;Ẩ&quot;, &quot;Ẫ&quot;, &quot;Ậ&quot;, &quot;Å&quot;,</span>
+                &quot;Ā&quot;, &quot;Ą&quot;, &quot;Α&quot;, &quot;Ά&quot;, &quot;Ἀ&quot;, &quot;Ἁ&quot;, &quot;Ἂ&quot;, &quot;Ἃ&quot;, &quot;Ἄ&quot;, &quot;Ἅ&quot;, &quot;Ἆ&quot;, &quot;Ἇ&quot;, &quot;ᾈ&quot;, &quot;ᾉ&quot;, &quot;ᾊ&quot;, &quot;ᾋ&quot;, &quot;ᾌ&quot;, &quot;ᾍ&quot;,
+                &quot;ᾎ&quot;, &quot;ᾏ&quot;, &quot;Ᾰ&quot;, &quot;Ᾱ&quot;, &quot;Ὰ&quot;, &quot;Ά&quot;, &quot;ᾼ&quot;, &quot;А&quot;, &quot;Ǻ&quot;, &quot;Ǎ&quot;));
+<span class="nc" id="L117">        put(&quot;B&quot;, Arrays.asList(&quot;Б&quot;, &quot;Β&quot;, &quot;ब&quot;));</span>
+<span class="nc" id="L118">        put(&quot;C&quot;, Arrays.asList(&quot;Ç&quot;, &quot;Ć&quot;, &quot;Č&quot;, &quot;Ĉ&quot;, &quot;Ċ&quot;));</span>
+<span class="nc" id="L119">        put(&quot;D&quot;, Arrays.asList(&quot;Ď&quot;, &quot;Ð&quot;, &quot;Đ&quot;, &quot;Ɖ&quot;, &quot;Ɗ&quot;, &quot;Ƌ&quot;, &quot;ᴅ&quot;, &quot;ᴆ&quot;, &quot;Д&quot;, &quot;Δ&quot;));</span>
+<span class="nc" id="L120">        put(&quot;E&quot;, Arrays.asList(&quot;É&quot;, &quot;È&quot;, &quot;Ẻ&quot;, &quot;Ẽ&quot;, &quot;Ẹ&quot;, &quot;Ê&quot;, &quot;Ế&quot;, &quot;Ề&quot;, &quot;Ể&quot;, &quot;Ễ&quot;, &quot;Ệ&quot;, &quot;Ë&quot;, &quot;Ē&quot;, &quot;Ę&quot;, &quot;Ě&quot;, &quot;Ĕ&quot;, &quot;Ė&quot;, &quot;Ε&quot;,</span>
+                &quot;Έ&quot;, &quot;Ἐ&quot;, &quot;Ἑ&quot;, &quot;Ἒ&quot;, &quot;Ἓ&quot;, &quot;Ἔ&quot;, &quot;Ἕ&quot;, &quot;Έ&quot;, &quot;Ὲ&quot;, &quot;Е&quot;, &quot;Ё&quot;, &quot;Э&quot;, &quot;Є&quot;, &quot;Ə&quot;));
+<span class="nc" id="L122">        put(&quot;F&quot;, Arrays.asList(&quot;Ф&quot;, &quot;Φ&quot;));</span>
+<span class="nc" id="L123">        put(&quot;G&quot;, Arrays.asList(&quot;Ğ&quot;, &quot;Ġ&quot;, &quot;Ģ&quot;, &quot;Г&quot;, &quot;Ґ&quot;, &quot;Γ&quot;));</span>
+<span class="nc" id="L124">        put(&quot;H&quot;, Arrays.asList(&quot;Η&quot;, &quot;Ή&quot;, &quot;Ħ&quot;));</span>
+<span class="nc" id="L125">        put(&quot;I&quot;, Arrays.asList(&quot;Í&quot;, &quot;Ì&quot;, &quot;Ỉ&quot;, &quot;Ĩ&quot;, &quot;Ị&quot;, &quot;Î&quot;, &quot;Ï&quot;, &quot;Ī&quot;, &quot;Ĭ&quot;, &quot;Į&quot;, &quot;İ&quot;, &quot;Ι&quot;, &quot;Ί&quot;, &quot;Ϊ&quot;, &quot;Ἰ&quot;, &quot;Ἱ&quot;, &quot;Ἳ&quot;, &quot;Ἴ&quot;,</span>
+                &quot;Ἵ&quot;, &quot;Ἶ&quot;, &quot;Ἷ&quot;, &quot;Ῐ&quot;, &quot;Ῑ&quot;, &quot;Ὶ&quot;, &quot;Ί&quot;, &quot;И&quot;, &quot;І&quot;, &quot;Ї&quot;, &quot;Ǐ&quot;, &quot;ϒ&quot;));
+<span class="nc" id="L127">        put(&quot;K&quot;, Arrays.asList(&quot;К&quot;, &quot;Κ&quot;));</span>
+<span class="nc" id="L128">        put(&quot;L&quot;, Arrays.asList(&quot;Ĺ&quot;, &quot;Ł&quot;, &quot;Л&quot;, &quot;Λ&quot;, &quot;Ļ&quot;, &quot;Ľ&quot;, &quot;Ŀ&quot;, &quot;ल&quot;));</span>
+<span class="nc" id="L129">        put(&quot;M&quot;, Arrays.asList(&quot;М&quot;, &quot;Μ&quot;));</span>
+<span class="nc" id="L130">        put(&quot;N&quot;, Arrays.asList(&quot;Ń&quot;, &quot;Ñ&quot;, &quot;Ň&quot;, &quot;Ņ&quot;, &quot;Ŋ&quot;, &quot;Н&quot;, &quot;Ν&quot;));</span>
+<span class="nc" id="L131">        put(&quot;O&quot;, Arrays.asList(&quot;Ó&quot;, &quot;Ò&quot;, &quot;Ỏ&quot;, &quot;Õ&quot;, &quot;Ọ&quot;, &quot;Ô&quot;, &quot;Ố&quot;, &quot;Ồ&quot;, &quot;Ổ&quot;, &quot;Ỗ&quot;, &quot;Ộ&quot;, &quot;Ơ&quot;, &quot;Ớ&quot;, &quot;Ờ&quot;, &quot;Ở&quot;, &quot;Ỡ&quot;, &quot;Ợ&quot;, &quot;Ø&quot;,</span>
+                &quot;Ō&quot;, &quot;Ő&quot;, &quot;Ŏ&quot;, &quot;Ο&quot;, &quot;Ό&quot;, &quot;Ὀ&quot;, &quot;Ὁ&quot;, &quot;Ὂ&quot;, &quot;Ὃ&quot;, &quot;Ὄ&quot;, &quot;Ὅ&quot;, &quot;Ὸ&quot;, &quot;Ό&quot;, &quot;О&quot;, &quot;Θ&quot;, &quot;Ө&quot;, &quot;Ǒ&quot;, &quot;Ǿ&quot;));
+<span class="nc" id="L133">        put(&quot;P&quot;, Arrays.asList(&quot;П&quot;, &quot;Π&quot;));</span>
+<span class="nc" id="L134">        put(&quot;R&quot;, Arrays.asList(&quot;Ř&quot;, &quot;Ŕ&quot;, &quot;Р&quot;, &quot;Ρ&quot;, &quot;Ŗ&quot;));</span>
+<span class="nc" id="L135">        put(&quot;S&quot;, Arrays.asList(&quot;Ş&quot;, &quot;Ŝ&quot;, &quot;Ș&quot;, &quot;Š&quot;, &quot;Ś&quot;, &quot;С&quot;, &quot;Σ&quot;));</span>
+<span class="nc" id="L136">        put(&quot;T&quot;, Arrays.asList(&quot;Ť&quot;, &quot;Ţ&quot;, &quot;Ŧ&quot;, &quot;Ț&quot;, &quot;Т&quot;, &quot;Τ&quot;));</span>
+<span class="nc" id="L137">        put(&quot;U&quot;, Arrays.asList(&quot;Ú&quot;, &quot;Ù&quot;, &quot;Ủ&quot;, &quot;Ũ&quot;, &quot;Ụ&quot;, &quot;Ư&quot;, &quot;Ứ&quot;, &quot;Ừ&quot;, &quot;Ử&quot;, &quot;Ữ&quot;, &quot;Ự&quot;, &quot;Û&quot;, &quot;Ū&quot;, &quot;Ů&quot;, &quot;Ű&quot;, &quot;Ŭ&quot;, &quot;Ų&quot;, &quot;У&quot;,</span>
+                &quot;Ǔ&quot;, &quot;Ǖ&quot;, &quot;Ǘ&quot;, &quot;Ǚ&quot;, &quot;Ǜ&quot;));
+<span class="nc" id="L139">        put(&quot;V&quot;, Arrays.asList(&quot;В&quot;));</span>
+<span class="nc" id="L140">        put(&quot;W&quot;, Arrays.asList(&quot;Ω&quot;, &quot;Ώ&quot;, &quot;Ŵ&quot;));</span>
+<span class="nc" id="L141">        put(&quot;X&quot;, Arrays.asList(&quot;Χ&quot;, &quot;Ξ&quot;));</span>
+<span class="nc" id="L142">        put(&quot;Y&quot;, Arrays.asList(&quot;Ý&quot;, &quot;Ỳ&quot;, &quot;Ỷ&quot;, &quot;Ỹ&quot;, &quot;Ỵ&quot;, &quot;Ÿ&quot;, &quot;Ῠ&quot;, &quot;Ῡ&quot;, &quot;Ὺ&quot;, &quot;Ύ&quot;, &quot;Ы&quot;, &quot;Й&quot;, &quot;Υ&quot;, &quot;Ϋ&quot;, &quot;Ŷ&quot;));</span>
+<span class="nc" id="L143">        put(&quot;Z&quot;, Arrays.asList(&quot;Ź&quot;, &quot;Ž&quot;, &quot;Ż&quot;, &quot;З&quot;, &quot;Ζ&quot;));</span>
+<span class="nc" id="L144">        put(&quot;AE&quot;, Arrays.asList(&quot;Ä&quot;, &quot;Æ&quot;, &quot;Ǽ&quot;));</span>
+<span class="nc" id="L145">        put(&quot;CH&quot;, Arrays.asList(&quot;Ч&quot;));</span>
+<span class="nc" id="L146">        put(&quot;DJ&quot;, Arrays.asList(&quot;Ђ&quot;));</span>
+<span class="nc" id="L147">        put(&quot;DZ&quot;, Arrays.asList(&quot;Џ&quot;));</span>
+<span class="nc" id="L148">        put(&quot;GX&quot;, Arrays.asList(&quot;Ĝ&quot;));</span>
+<span class="nc" id="L149">        put(&quot;HX&quot;, Arrays.asList(&quot;Ĥ&quot;));</span>
+<span class="nc" id="L150">        put(&quot;IJ&quot;, Arrays.asList(&quot;Ĳ&quot;));</span>
+<span class="nc" id="L151">        put(&quot;JX&quot;, Arrays.asList(&quot;Ĵ&quot;));</span>
+<span class="nc" id="L152">        put(&quot;KH&quot;, Arrays.asList(&quot;Х&quot;));</span>
+<span class="nc" id="L153">        put(&quot;LJ&quot;, Arrays.asList(&quot;Љ&quot;));</span>
+<span class="nc" id="L154">        put(&quot;NJ&quot;, Arrays.asList(&quot;Њ&quot;));</span>
+<span class="nc" id="L155">        put(&quot;OE&quot;, Arrays.asList(&quot;Ö&quot;, &quot;Œ&quot;));</span>
+<span class="nc" id="L156">        put(&quot;PS&quot;, Arrays.asList(&quot;Ψ&quot;));</span>
+<span class="nc" id="L157">        put(&quot;SH&quot;, Arrays.asList(&quot;Ш&quot;));</span>
+<span class="nc" id="L158">        put(&quot;SHCH&quot;, Arrays.asList(&quot;Щ&quot;));</span>
+<span class="nc" id="L159">        put(&quot;SS&quot;, Arrays.asList(&quot;ẞ&quot;));</span>
+<span class="nc" id="L160">        put(&quot;TH&quot;, Arrays.asList(&quot;Þ&quot;));</span>
+<span class="nc" id="L161">        put(&quot;TS&quot;, Arrays.asList(&quot;Ц&quot;));</span>
+<span class="nc" id="L162">        put(&quot;UE&quot;, Arrays.asList(&quot;Ü&quot;));</span>
+<span class="nc" id="L163">        put(&quot;YA&quot;, Arrays.asList(&quot;Я&quot;));</span>
+<span class="nc" id="L164">        put(&quot;YU&quot;, Arrays.asList(&quot;Ю&quot;));</span>
+<span class="nc" id="L165">        put(&quot;ZH&quot;, Arrays.asList(&quot;Ж&quot;));</span>
+<span class="nc" id="L166">        put(&quot; &quot;, Arrays.asList(&quot;\\xC2\\xA0&quot;, &quot;\\xE2\\x80\\x80&quot;, &quot;\\xE2\\x80\\x81&quot;, &quot;\\xE2\\x80\\x82&quot;, &quot;\\xE2\\x80\\x83&quot;,</span>
+                &quot;\\xE2\\x80\\x84&quot;, &quot;\\xE2\\x80\\x85&quot;, &quot;\\xE2\\x80\\x86&quot;, &quot;\\xE2\\x80\\x87&quot;, &quot;\\xE2\\x80\\x88&quot;,
+                &quot;\\xE2\\x80\\x89&quot;, &quot;\\xE2\\x80\\x8A&quot;, &quot;\\xE2\\x80\\xAF&quot;, &quot;\\xE2\\x81\\x9F&quot;, &quot;\\xE3\\x80\\x80&quot;));
+
+
+<span class="nc" id="L171">    }};</span>
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.2.201808211720</span></div></body></html>

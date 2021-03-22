@@ -1,0 +1,28 @@
+how do we handle primitive types
+how do we handle when all methods are void?
+how do we handle subtypes and other sub constraint
+ie Optional<>
+subtypes
+wildcards
+lower and upper bounded wilcards
+generics
+variable args (var args are just arrays so arrays can be passed down)
+non primitive types
+ ie arrays, object
+ autobixing/unbocing
+represent  thorws exceptions 
+
+should we always include null for each production?
+
+how do we deal with types that can return the required type nut need a bit more code ie consider Iterator<String> and a method a(String)
+
+how do we know if the function returns null ie trieset.longestprefixof
+ 
+ 
+how do we tests functions in the lib that have no arguments
+
+what happendas in the case of inheritance do we need to add grammar for inherited mehods
+
+
+
+4.
