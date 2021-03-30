@@ -1,16 +1,34 @@
-how do we handle primitive types
-how do we handle when all methods are void?
+Q1. how do we handle when all/some of the  methods in a lib are void 
+
+
+
+Q2. how do we handle primitive types if no production rule exists
+
+q3. How do we construct reference types if no production rule exixts
+
+
+
+
+q4. should we consider visibility contraints ie private, protected etc etc
+
+q5. how deep do we go in the chain and can we control it using parameters
+
+q6. how do we test exceptions
+
+
 how do we handle subtypes and other sub constraint
+arrays
 ie Optional<>
-subtypes
+subtypes by implmentation or extension
 wildcards
 lower and upper bounded wilcards
 generics
 variable args (var args are just arrays so arrays can be passed down)
-non primitive types
- ie arrays, object
- autobixing/unbocing
-represent  thorws exceptions 
+autobixing/unbocing
+
+
+
+ what if the lib has a constructor and a mixture of static/instance methods
 
 should we always include null for each production?
 
@@ -20,9 +38,7 @@ how do we know if the function returns null ie trieset.longestprefixof
  
  
 how do we tests functions in the lib that have no arguments
-
 what happendas in the case of inheritance do we need to add grammar for inherited mehods
 
 
 
-4.

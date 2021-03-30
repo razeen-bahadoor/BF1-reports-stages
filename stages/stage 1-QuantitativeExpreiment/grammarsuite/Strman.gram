@@ -1,0 +1,162 @@
+Class: Strman
+
+test :-rule+ .
+rule :- identifier,'.',types, ';' .
+identifier :- 'Strman' .
+
+
+type :- String | String[] | List<String> | Map<Character, Long> | boolean | long | int | Optional<String> .
+
+String :-
+	append
+	|appendArray
+	|collapseWhiteSpace
+	|ensureLeft
+	|base64Decode
+	|base64Encode
+	|binDecode
+	|binEncode
+	|decDecode
+	|decEncode
+	|ensureRight
+	|format
+	|hexDecode
+	|hexEncode
+	|insert
+	|last
+	|leftPad
+	|leftTrim
+	|prepend
+	|prependArray
+	|removeLeft
+	|removeNonWords
+	|removeRight
+	|removeSpaces	
+	|repeat
+	|replace
+	|reverse	
+	|rightPad
+	|rightTrim
+	|safeTruncate	
+	|truncate
+	|htmlDecode
+	|htmlEncode
+	|shuffle
+	|slice
+	|slugify
+	|transliterate
+	|surround
+	|toCamelCase
+	|toStudlyCase
+	|toDecamelize
+	|toKebabCase
+	|toSnakeCase
+	|decode
+	|encode
+	|join
+	|lowerFirst
+	|upperFirst
+	|capitelize
+	|swapCase
+	|humanize
+	|dasherize .
+
+
+String[] :- between | chars | removeEmptyStrings | split | words | chop | lines | underscored .
+List<String> :- zip .
+Map<Character, Long> :- charsCount .
+
+boolean :- contains | containsAll | containsAny | endsWith | inequal | isEnclosedBetween | isLowerCase | isString | isUpperCase | unequal | isBlank .
+
+long :- countSubstr
+int :- indexOf | lastIndexOf | length .
+
+Optional<String> :- at | first | head | tail | trimsEnd | trimStart .
+
+
+at :- 'at','(',String,',',int,')'.
+first :- 'first','(',String,',',int,')'.
+head :- 'head','(',String,')'.
+tail :- 'tail','(',String,')'.
+trimEnd :- 'trimEnd','(',String,{String},')'.
+trimStart :- 'trimStart','(',String,{String},')'.
+indexOf :- 'indexOf','('String,',',String,',',int,',',boolean,')'.
+lastIndexOf :- 'lastIndexOf','(',String,',',String[,',',int][,',',Boolean],')'.
+length : - 'length','(',String,')'.
+countSubstr :- 'countSubstr','(',String,',',String[,',',boolean,',',boolean],')' . 
+contains :- 'contains','(',String,',',String[,',',Boolean],')'.
+containsAll :- 'containsAll','(',String,',',String[][,',',Boolean],')'.
+containsAny :- 'containsAny','(',String,',',String[][,',',Boolean],')'.
+endsWith :- 'endsWith','(',String,',',String[,',',int][,',',Boolean],')'.
+inequal :- 'inequal','(',String,',',String,')'.
+isEnclosedBetween :- 'isEnclosedBetween','(',String,',',String[,',',String],')'.
+isLowerCase :- 'isLowerCase','(',String,')'.
+isString :- 'isString','(',String,')'.
+isUpperCase :- 'isUpperCase','(',String,')'.
+unequal :- 'unequal','(',String,',',String,')'.
+isBlank :- 'isBlank','(',String,')'.
+charsCount :- 'charsCount','(',String,')'.
+zip :- 'zip','(',String[],')' .
+between :- 'between','(',String,',',String,',',String,')'.
+chars :- 'chars','(',String,')'.
+removeEmptyStrings :- 'removeEmptyStrings','('String[],')'.
+split :- 'split','(',String,',',String,')'.
+words :- 'words','(',String,')'.
+chop :- 'chop','(', String, ',',int,')' .
+lines :- 'lines','(',String,')'.
+underscored :- 'underscored','(',String,')'.
+append :- 'append','(',String,{',',String},')' .
+appendArray :-	'appendArray','(',String,','String[],')' .
+collapseWhiteSpace: -	'collapseWhiteSpace','(',String,')' .
+ensureLeft :-	'ensureLeft','(',String,',',String[,',',Boolean],')'.
+base64Decode :-	'base64Decode','(',String,')'.
+base64Encode :-	'base64Encode','(',String,')'.
+binDecode:-	'binDecode','(',String,')'.
+binEncode :-	'binEncode','(',String,')'.
+decDecode :-	'decDecode','(',String,')'.
+decEncode:-	'decEncode','(',String,')'.
+ensureRight :-	'ensureRight','(',String,',',String[,',',Boolean],')'.
+format :-	'format','(',String,{',',String},')'.
+hexDecode :-	'hexDecode','(',String,')'.
+hexEncode:- 	'hexEncode','(',String,')'.
+insert :-	'insert','(',String,',',String,',',int,')'.
+last:-	'last','(',String,',',int,')'.
+leftPad :-	'leftPad','(',String,',',String,',',int,')'.
+leftTrim :-	'leftTrim','(',String,')'.
+prepend :-	'prepend','(',String,{',',String},')'.
+prependArray :-	'prependArray','(',String,','String[],')'.
+removeLeft :-	'removeLeft','(',String,',',String[,',',Boolean],')'.
+removeNonwords :-	'removeNonWords','(',String,')'.
+removeRight :-	'removeRight','(',String,',',String[,',',Boolean],')'.
+removeSpaces :-	'removeSpaces','(',String,')'	.
+repeat :-	'repeat','(',String,',',int,')'.
+replace :-	'replace','(',String,',',String,',',String,',',Boolean,')'.
+reverse :-	'reverse','(',String,')'	.
+rightPad :-	'rightPad','(',String,',',String,',',int,')'.
+rightTrim :-	'rightTrim','(',String,')'.
+safeTruncate :-	'safeTruncate','(',String,',',int,',',String,')'	.
+truncate :-	'truncate','(',String,',',int,',',String,')'.
+htmlDecode :-	'htmlDecode','(',String,')'.
+htmlEncode :-	'htmlEncode','(',String,')'.
+shuffle :-	'shuffle','(',String,')'.
+slice :-	'slice','(',String,',',int,',',int,')'.
+slugify :-	'slugify','(',String,')'.
+transliterate :-	'transliterate','(',String,')'.
+surround :-	'surround','(',String,',',String,',',String,')'.
+toCamelCase :-	'toCamelCase','(',String,')'.
+toStudlyCase :-	'toStudlyCase','(',String,')'.
+toDecamlize :-	'toDecamelize','(',String,')'.
+toKebabCase :-	'toKebabCase','(',String,')'.
+toSnakeCase :-	'toSnakeCase','(',String,')'.
+decode :-	'decode','(',String,',',int,',',int,')'.
+encode :-	'encode','(',String,',',int,',',int,')'.
+join :-	'join','(',String[],',',String,')'.
+lowerFirst :-	'lowerFirst','(',String,')'.
+upperFirst :-	'upperFirst','(',String,')'	.
+capitelize :-	'capitelize','(',String,')'.
+swapCase :-	'swapCase','(', String,')'.
+humanize :-	'humanize','(',String,')'.
+dahserize :-	'dasherize','(',String,')'.
+
+
+

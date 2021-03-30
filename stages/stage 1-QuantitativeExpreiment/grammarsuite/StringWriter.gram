@@ -1,0 +1,29 @@
+Class: StringWriter
+
+
+test :- object,rule+ .
+object :- identifier,'=',constructor, ';' .
+rule :- identifier,'.',types, ';' .
+identifier :- 'x' .
+
+
+constructor :- 'new','StringWriter','(',[int],')' .
+
+types :- StringWriter | void | StringBuffer | String
+
+StringWriter :- append .
+void :- close | flush | write .
+StringBuffer :- getBuffer .
+String :- toString
+
+append :- 'append', '(', (char | charsequence | charsequence, ',', int, ',', int), ')' .
+close :- 'close', '(', ')' .
+flush :- 'flush','(', ')' .
+write :- 'write', '(', (int | String, [',', int+] | char[], ',', int+) , ')' .
+getBuffer :- 'getBuffer','(',')' .
+toString :- 'toString','(',')'
+
+
+<primitive and ref types>
+
+

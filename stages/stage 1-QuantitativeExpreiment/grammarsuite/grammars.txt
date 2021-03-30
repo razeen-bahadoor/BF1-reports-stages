@@ -16,11 +16,6 @@ special sequence 	? ... ?
 exception 	-
 
 
-Mapping non existent types:
-Two methods for example
-int ::= -1|0|1 (test the boundaries)
-int::= digit+
-digit::= 0|1|2|3|4|5|6|7|8|9
 
 
 

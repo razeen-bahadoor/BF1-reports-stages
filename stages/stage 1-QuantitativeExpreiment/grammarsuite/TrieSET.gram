@@ -1,0 +1,33 @@
+Class:TrieSet
+
+test :- object,rule+ .
+object :- identifier,'=',constructor, ';' .
+rule :- identifier,'.',types, ';' .
+identifier :- 'x' .
+
+
+constructor :- 'new', 'TrieSET', '(', ')' .
+types :- void | boolean | Iterator<String> | Iterable<String> | String | int
+
+
+
+void :- add | delete .
+boolean :- contains | isEmpty .
+Iterator<String> :- iterator .
+Iterable<String> :- keysThatMatch | keysWithPrefix .
+String :- longestPrefixOf .
+int :- size
+
+
+add :- 'add', '(', String, ')' .
+delete :- 'delete', '(', String, ')' .
+contains :- 'contains', '(', String, ')' .
+isEmpty :- 'isEmpty', '(', ')' .
+iterator :- 'iterator', '(', ')' .
+keysThatMatch :- 'keysThatMatch', '(', String, ')' .
+keysWithprefix :- 'keysWithPrefix', '(', String, ')' .
+longestPrefixOf :- 'longestPrefixOf', '(', String, ')' .
+size :- 'size', '(', ')'
+
+
+<primitive and re types>

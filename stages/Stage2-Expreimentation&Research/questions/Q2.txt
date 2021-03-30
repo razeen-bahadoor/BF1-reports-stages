@@ -1,0 +1,86 @@
+How do we handle primitive types if no rule exists for them
+sln: manaully introduce the rules
+
+
+
+
+INTEGER
+________________
+int:: = 0 | Sign,NonZero,{Digit}
+Digit::= 0 | NonZero
+NonZero::= 1|2|3|4|5|6|7|8|9
+Sign ::= '+'|'-'
+
+BOOLEAN
+_______________
+boolean::= True|False
+
+
+BYTE
+__________________
+byte :: = 0 | Sign,NonZero,{Digit}
+Digit::= 0 | NonZero
+NonZero::= 1|2|3|4|5|6|7|8|9
+Sign ::= '+'|'-'
+
+
+SHORT
+__________________
+short:: = 0 | Sign,NonZero,{Digit}
+Digit::= 0 | NonZero
+NonZero::= 1|2|3|4|5|6|7|8|9
+Sign ::= '+'|'-'
+
+
+LONG
+_____________________
+long:: = 0 | Sign,NonZero,{Digit}
+Digit::= 0 | NonZero
+NonZero::= 1|2|3|4|5|6|7|8|9
+Sign ::= '+'|'-'
+
+
+DOUBLE
+________________________________
+double::=  int,'.',[int], [Exponent],[Suffix] | '.',int,[Exponent],[Suffix] | int,Exponent,[Suffix] | int,[Exponent],Suffix
+Exponent ::= ExponentIndicator,int
+ExponentIndicator::= 'e'|'E'
+Suffix::='f'|'F'
+int:: = 0 | Sign,NonZero,{Digit}
+Digit::= 0 | NonZero
+NonZero::= 1|2|3|4|5|6|7|8|9
+Sign::='+'|'-'
+
+FLOAT
+___________________________
+float ::= int,'.',int, [Exponent],Suffix | '.',int,[Exponent],Suffix | int,Exponent,Suffix | int,[Exponent],Suffix
+Exponent ::= ExponentIndicator,int
+ExponentIndicator::= 'e'|'E'
+Suffix::='f'|'F'
+int:: = 0 | Sign,NonZero,{Digit}
+Digit::= 0 | NonZero
+NonZero::= 1|2|3|4|5|6|7|8|9
+Sign::='+'|'-'
+
+
+CHAR
+___________________________
+
+
+char: The char data type is a single 16-bit Unicode character. It has a minimum value of '\u0000' (or 0) and a maximum value of '\uffff' (or 65,535 inclusive).
+
+char::= letter | digit | symbol | "_" ;
+letter ::= "A" | "B" | "C" | "D" | "E" | "F" | "G"
+       | "H" | "I" | "J" | "K" | "L" | "M" | "N"
+       | "O" | "P" | "Q" | "R" | "S" | "T" | "U"
+       | "V" | "W" | "X" | "Y" | "Z" | "a" | "b"
+       | "c" | "d" | "e" | "f" | "g" | "h" | "i"
+       | "j" | "k" | "l" | "m" | "n" | "o" | "p"
+       | "q" | "r" | "s" | "t" | "u" | "v" | "w"
+       | "x" | "y" | "z" ;
+       
+digit ::= "0" | "1" | "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9" ;
+symbol ::= "[" | "]" | "{" | "}" | "(" | ")" | "<" | ">"
+       | "'" | '"' | "=" | "|" | "." | "," | ";" | "_" ;
+
+
