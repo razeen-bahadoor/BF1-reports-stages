@@ -1,20 +1,21 @@
 Class: StringWriter
 
 
-test :- object,rule+ .
-object :- identifier,'=',constructor, ';' .
-rule :- identifier,'.',types, ';' .
-identifier :- 'x' .
 
 
-constructor :- 'new','StringWriter','(',[int],')' .
+test :- subject,rule+ .
+rule:- subjectAPI,';'.
+classID :- 'StringWriter' .
+subject :-classID, subjectID,'=',subjectConstructor,';' .
+subjectConstructor :- 'new','StringWriter','(',[int],')' .
+subjectID :- 'x' .
+subjectAPI :- StringWriter | void | StringBuffer | String
 
-types :- StringWriter | void | StringBuffer | String
+StringWriter :- subjectID,'.'append  .
+void :- subjectID,'.'(close | flush | write) .
+StringBuffer :- subjectID,'.' getBuffer .
+String :- subjectID,'.',toString        //purpose of appending subjectID here eg consider write()  will have to populate String so it needs to have x.toString() and not just toString()
 
-StringWriter :- append .
-void :- close | flush | write .
-StringBuffer :- getBuffer .
-String :- toString
 
 append :- 'append', '(', (char | charsequence | charsequence, ',', int, ',', int), ')' .
 close :- 'close', '(', ')' .
@@ -23,7 +24,4 @@ write :- 'write', '(', (int | String, [',', int+] | char[], ',', int+) , ')' .
 getBuffer :- 'getBuffer','(',')' .
 toString :- 'toString','(',')'
 
-
 <primitive and ref types>
-
-

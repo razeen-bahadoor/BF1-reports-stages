@@ -1,22 +1,24 @@
 Class:TrieSet
 
-test :- object,rule+ .
-object :- identifier,'=',constructor, ';' .
-rule :- identifier,'.',types, ';' .
-identifier :- 'x' .
+NB: possible endless loop with the String and longestPrefixOf
+
+test :- subject,rule+ .
+
+rule :- subjectAPI ';' .
+
+subject :- classID, subjectID,'=',subjectConstructor, ';' .
+classID :- 'TrieSET' .
+subjectConstructor :- 'new', 'TrieSET', '(', ')' .
+subjectAPI :- void | boolean | Iterator<String> | Iterable<String> | String | int
+subjectID :- 'x' .
 
 
-constructor :- 'new', 'TrieSET', '(', ')' .
-types :- void | boolean | Iterator<String> | Iterable<String> | String | int
-
-
-
-void :- add | delete .
-boolean :- contains | isEmpty .
-Iterator<String> :- iterator .
-Iterable<String> :- keysThatMatch | keysWithPrefix .
-String :- longestPrefixOf .
-int :- size
+void :- subjectID, '.', (add | delete) .
+boolean :- subjectID, '.', (contains | isEmpty) .
+Iterator<String> :-subjectID, '.', iterator .
+Iterable<String> :-subjectID, '.', (keysThatMatch | keysWithPrefix) .
+String :- subjectID, '.', longestPrefixOf . //need to introduce an alternative to break infinite loop
+int :-subjectID, '.', size
 
 
 add :- 'add', '(', String, ')' .

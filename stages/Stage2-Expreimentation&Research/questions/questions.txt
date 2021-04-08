@@ -8,12 +8,11 @@ q3. How do we construct reference types if no production rule exixts
 
 
 
+ should we consider visibility contraints ie private, protected etc etc
 
-q4. should we consider visibility contraints ie private, protected etc etc
+ how deep do we go in the chain and can we control it using parameters
 
-q5. how deep do we go in the chain and can we control it using parameters
-
-q6. how do we test exceptions
+ how do we test exceptions
 
 
 how do we handle subtypes and other sub constraint
@@ -26,7 +25,7 @@ generics
 variable args (var args are just arrays so arrays can be passed down)
 autobixing/unbocing
 
-
+how do we prevent infinite loops ie look at trieset and populating the string arg using longest prefix
 
  what if the lib has a constructor and a mixture of static/instance methods
 

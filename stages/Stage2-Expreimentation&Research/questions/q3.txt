@@ -1,0 +1,132 @@
+how do we handle the construction of reference types? that includes manipulating the state of the object to make it meaningful?
+
+
+sln: 
+involves a 2 step process
+
+introduce an argument grammar that will
+
+	1. construct the object  
+	2. mutate it with instance methods to give it meaning
+
+
+
+problems?: 
+there may be overlaps between argument grammar and subject grammar ie in terms of return types and method names. In order to solve this problem we can rename conflicts
+
+
+consider the following subject grammar
+
+test :- subject,rule+ .
+subject :- subjectID, '=', subjectConstructor,';' .
+subjectConstructor :- 'new', 'c1','(',')'
+subjectID :- 'x' .
+
+
+rule :- subjectAPI,';' .
+
+subjectAPI :- m1 | m2 .
+
+m1 :- subjectID, '.' add .
+m2 :- subjectID, '.' delete .
+
+
+add :- 'add','(',c2,')' .
+delete :- 'delete','(',c2,')' .
+
+-consider the following argument grammar
+
+subject :- subjectID , '=', subjectConstructor, ';' . 
+subjectConstructor :- 'new', 'c2','(',')' .
+subjectID :- 'y' .
+
+
+rule :- subjectAPI, ';' .
+
+subjectAPI :- m1 | m3
+
+
+m1 :- subjectID, '.', append .
+m3 :- subjectID, '.', delete .
+
+
+append :- 'append','(',')'
+delete :- 'delete', '('int,')' .
+
+_____________________________________________________________________________________
+
+-we can merge the grammars but we first have to rewrite the grammar to remove conflicts
+
+
+
+c2 :- c2ID .
+
+
+
+
+
+c2Subject :- c2ID, '=', c2Constructor, ';' .
+c2Constructor :- 'new', 'c2','(',')' .
+c2ID :- 'y' .
+c2rule :- c2API, ';' .
+
+c2API :- c2.m1 | c2.m3 .
+
+
+c2.m1 :- c2ID, '.', c2-append .
+c2.m3 :- c2ID, '.', c2-delete .
+
+
+c2-append :- 'append','(',')' .
+c2-dlete :- 'delete','(',int,')' .
+________________________________________________________________________________________________________
+
+-we can now merge the grammar
+
+test :- subject,rule+ .
+subject :- subjectID, '=', subjectConstructor,';' .
+subjectConstructor :- 'new', 'c1','(',')'
+subjectID :- 'x' .
+
+
+rule :- subjectAPI,';' .
+
+subjectAPI :- m1 | m2 .
+
+m1 :- c2Arg, subjectID, '.' add .
+m2 :- subjectID, '.' delete .
+
+
+add :- 'add','(',c2,')' .
+delete :- 'delete','(',c2,')' 
+
+
+
+
+
+
+
+
+c2 :- c2ID .
+
+c2Arg:- c2Subject,c2rule+ .
+
+c2Subject :- c2ID, '=', c2Constructor, ';' .
+c2Constructor :- 'new', 'c2','(',')' .
+c2ID :- 'y' .
+c2rule :- c2API, ';' .
+
+c2API :- c2.m1 | c2.m3 .
+
+
+c2.m1 :- c2ID, '.', c2-append .
+c2.m3 :- c2ID, '.', c2-delete .
+
+
+c2-append :- 'append','(',')' .
+c2-dlete :- 'delete','(',int,')' .
+
+
+
+
+

@@ -1,13 +1,13 @@
 Class: Strman
 
 test :-rule+ .
-rule :- identifier,'.',types, ';' .
-identifier :- 'Strman' .
+rule :- subjectAPI, ';' .
+subjectID :- 'Strman' .
+classID :- 'Strman'. 
 
+subjectAPI :- String | String[] | List<String> | Map<Character, Long> | boolean | long | int | Optional<String> .
 
-type :- String | String[] | List<String> | Map<Character, Long> | boolean | long | int | Optional<String> .
-
-String :-
+String :- subjectID , '.', (
 	append
 	|appendArray
 	|collapseWhiteSpace
@@ -59,19 +59,54 @@ String :-
 	|capitelize
 	|swapCase
 	|humanize
-	|dasherize .
+	|dasherize ) .
 
 
-String[] :- between | chars | removeEmptyStrings | split | words | chop | lines | underscored .
-List<String> :- zip .
-Map<Character, Long> :- charsCount .
+String[] :-subjectID, '.',  (
+		between 
+		|chars 
+		| removeEmptyStrings 
+		| split 
+		| words 
+		| chop 
+		| lines
+		| underscored
+	) .
 
-boolean :- contains | containsAll | containsAny | endsWith | inequal | isEnclosedBetween | isLowerCase | isString | isUpperCase | unequal | isBlank .
 
-long :- countSubstr
-int :- indexOf | lastIndexOf | length .
 
-Optional<String> :- at | first | head | tail | trimsEnd | trimStart .
+List<String> :-subjectID,'.', zip .
+Map<Character, Long> :-subjectID,'.' charsCount .
+
+boolean :- subjectID,'.' , (	
+		contains 
+		|containsAll 
+		| containsAny 
+		| endsWith 
+		| inequal 
+		| isEnclosedBetween 
+		| isLowerCase 
+		| isString 
+		| isUpperCase 
+		| unequal 
+		| isBlank
+	) .
+
+long :- subjectID,'.' countSubstr .
+int :- subjectID,'.' (
+		indexOf 
+		| lastIndexOf 
+		| length 
+	).
+
+Optional<String> :- subjectID,'.' (
+			at 
+			| first 
+			| head 
+			| tail 
+			| trimsEnd 
+			| trimStart 
+		).
 
 
 at :- 'at','(',String,',',int,')'.

@@ -33,14 +33,14 @@ Test n:
 2. Construct the grammar
 
 test :- object,rule+ .
-object :- identifier,'=',pipedWriter,';' .
-rule :- identifier,'.',void, ';' .
+object :- identifier,'=',constructor,';' .
+rule :- identifier,'.',rulelist, ';' .
 identifier :- 'x' .
-
-pipedWriter :- 'new','PipedWriter','(','PipedReader',')' .
+rulelist :- void .
+constructor :- 'new','PipedWriter','(',[PipedReader],')' .
 void :- close | connect | flush | write .
 close :- 'close','(',')' .
-connect :- 'connect','(','pipedReader',')' .
+connect :- 'connect','(',PipedReader,')' .
 flush :- 'flush','(',')' .
 write :- 'write','(',(char[], ',', int, ',', int | int),')' .
 
