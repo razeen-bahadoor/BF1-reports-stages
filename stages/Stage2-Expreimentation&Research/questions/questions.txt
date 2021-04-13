@@ -7,6 +7,7 @@ Q2. how do we handle primitive types if no production rule exists
 q3. How do we construct reference types if no production rule exixts
 
 
+q4. how do we prevent infinite loops ie look at trieset and populating the string arg using longest prefix ie how do we detect and solve cycles in the gramamr?
 
  should we consider visibility contraints ie private, protected etc etc
 
@@ -25,7 +26,7 @@ generics
 variable args (var args are just arrays so arrays can be passed down)
 autobixing/unbocing
 
-how do we prevent infinite loops ie look at trieset and populating the string arg using longest prefix
+
 
  what if the lib has a constructor and a mixture of static/instance methods
 
@@ -39,5 +40,7 @@ how do we know if the function returns null ie trieset.longestprefixof
 how do we tests functions in the lib that have no arguments
 what happendas in the case of inheritance do we need to add grammar for inherited mehods
 
+
+should we verify that the produced strings are members of the language of the grammar
 
 
